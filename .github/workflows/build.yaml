@@ -27,8 +27,9 @@ jobs:
     - name: Install dependencies for Linux
       if: ${{ matrix.name == 'Linux' }}
       run: |
-        sudo apt update
-        sudo apt install -y libsdl2-dev
+        apt update
+        apt install make
+        apt install -y libsdl2-dev
     - name: Install dependencies for Mac
       if: ${{ matrix.name == 'Mac' }}
       run: |
