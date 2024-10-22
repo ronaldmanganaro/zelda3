@@ -18,7 +18,12 @@ jobs:
         - name: Linux
           os: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+      # Checkout the repository and all submodules
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        submodules: true         # Fetch submodules
+        submodules-depth: 1       # Limit depth for submodule checkout (optional)
     - uses: actions/setup-python@v4
       with:
         python-version: '3.10'
@@ -27,4 +32,5 @@ jobs:
         sudo apt update
         sudo apt install -y libsdl2-dev
     - name: Build
-      run: make -j$(nproc) zelda3
+      run: make all
+      #run: make -j$(nproc) zelda3
