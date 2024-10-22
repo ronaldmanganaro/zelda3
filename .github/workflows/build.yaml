@@ -24,8 +24,8 @@ jobs:
         python-version: '3.10'
     - name: Install dependencies for Linux
       run: |
-        apt update
-        apt install make
-        apt install -y libsdl2-dev
+        sudo apt update
+        sudo apt install make
+        sudo apt install -y libsdl2-dev
     - name: Build
       run: make -j$(nproc) zelda3
