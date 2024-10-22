@@ -25,7 +25,6 @@ jobs:
     - name: Install dependencies for Linux
       run: |
         sudo apt update
-        sudo apt install make
         sudo apt install -y libsdl2-dev
     - name: Build
       run: make -j$(nproc) zelda3
