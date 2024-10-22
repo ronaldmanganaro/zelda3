@@ -5,6 +5,7 @@ OBJS:=$(SRCS:%.c=%.o)
 PYTHON:=/usr/bin/env python3
 CFLAGS:=$(if $(CFLAGS),$(CFLAGS),-O2 -Werror) -I .
 CFLAGS:=${CFLAGS} $(shell sdl2-config --cflags) -DSYSTEM_VOLUME_MIXER_AVAILABLE=0
+CC=gcc
 
 ifeq (${OS},Windows_NT)
     WINDRES:=windres
