@@ -10,7 +10,7 @@ on:
 jobs:
   build-unix:
     name: on ${{ matrix.name }}
-    runs-on: ${{ matrix.os }}
+    runs-on: self-hosted
     strategy:
       fail-fast: false
       matrix:
