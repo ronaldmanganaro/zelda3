@@ -40,6 +40,7 @@ jobs:
         cp /runner/zelda3.sfc /runner/_work/zelda3/zelda3/zelda3.sfc
     - name: Build
       run: |
+        ln -s ../snes snes
         git config --global --add safe.directory /runner/_work/zelda3/zelda3
         cd /runner/_work/zelda3/zelda3/src/platform/switch
         make
