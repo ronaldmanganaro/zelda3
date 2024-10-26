@@ -34,14 +34,19 @@ jobs:
         pip install -r requirements.txt
     
     - name: Install dependencies for Linux
-      run: |
+      run: |      
         sudo apt update
         sudo apt install -y libsdl2-dev
+        cd /runner/_work/zelda3
+        cp -rf ./zelda3/. ../
+        cd /runner
+        cp /runner/zelda3.sfc /runner/_work/zelda3/zelda3.sfc
         cp /runner/zelda3.sfc /runner/_work/zelda3/zelda3/zelda3.sfc
     - name: Build
       run: |
         ln -s ../snes snes
         git config --global --add safe.directory /runner/_work/zelda3/zelda3
-        cd /runner/_work/zelda3/zelda3/src/platform/switch
+        git config --global --add safe.directory /runner/_work/zelda3
+        cd /runner/_work/zelda3/src/platform/switch
         make
       #run: make -j$(nproc) zelda3
