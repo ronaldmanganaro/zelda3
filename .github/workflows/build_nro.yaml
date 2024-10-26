@@ -40,6 +40,6 @@ jobs:
         cp /runner/zelda3.sfc /runner/_work/zelda3/zelda3/zelda3.sfc
     - name: Build
       run: |
-        cd platform/switch
+        cd runner/_work/zelda3/zelda3/src/platform/switch
         make
       #run: make -j$(nproc) zelda3
