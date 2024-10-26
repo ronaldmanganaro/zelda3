@@ -38,7 +38,7 @@ jobs:
         sudo apt update
         sudo apt install -y libsdl2-dev
         cd /runner/_work/zelda3
-        mv ./zelda3/* ../
+        mv -f ./zelda3/* ../
         cd /runner
         cp /runner/zelda3.sfc /runner/_work/zelda3/zelda3.sfc
     - name: Build
