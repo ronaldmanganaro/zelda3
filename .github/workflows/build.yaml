@@ -41,6 +41,7 @@ jobs:
         cp -rf ./zelda3/. ../
         cd /runner
         cp /runner/zelda3.sfc /runner/_work/zelda3/zelda3.sfc
+        cp /runner/zelda3.sfc /runner/_work/zelda3/zelda3/zelda3.sfc
     - name: Build
       run: make all
       #run: make -j$(nproc) zelda3
